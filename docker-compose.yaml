@@ -1,0 +1,41 @@
+services:
+  app:
+    build: .
+    container_name: link-bot
+    ports:
+      - '8080:8080'
+    environment:
+      NODE_ENV: development
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: 5432
+      POSTGRES_DB_NAME: 'market-lab-linkbot'
+      POSTGRES_USER: 'market-lab-login'
+      POSTGRES_PASS: 'market-lab-pass'
+      TELEGRAM_BOT_TOKEN: '8082856087:AAE55Ieu3DDf2L-vMHyp5BzkFmLL45pxeQE'
+      DESC_MAX_LENGTH: 100
+    depends_on:
+      - postgres
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - link_bot_network
+  postgres:
+    image: postgres:14.1-alpine
+    container_name: postgres_db
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: market-lab-linkbot
+      POSTGRES_USER: market-lab-login
+      POSTGRES_PASSWORD: market-lab-pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - link_bot_network
+volumes:
+  postgres_data:
+
+networks:
+  my_network:
+    driver: bridge
