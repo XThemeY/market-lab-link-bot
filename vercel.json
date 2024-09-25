@@ -1,5 +1,8 @@
 {
   "version": 2,
+  "buildCommand": "nest build",
+  "installCommand": "yarn install",
+  "devCommand": "node dist/main.js",
   "builds": [
     {
       "src": "dist/main.js",
