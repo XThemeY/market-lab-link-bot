@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { BotContext, UrlDataType } from '@libs/interfaces';
-import { LinksService } from '@features/links/links.service';
+import { BotContext, UrlDataType } from '../libs/interfaces';
+import { LinksService } from '../features/links/links.service';
 import { ConfigService } from '@nestjs/config';
 
 @Injectable()

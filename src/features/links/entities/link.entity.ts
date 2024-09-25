@@ -1,4 +1,4 @@
-import { ILink } from '@libs/interfaces';
+import { ILink } from '../../../libs/interfaces';
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()

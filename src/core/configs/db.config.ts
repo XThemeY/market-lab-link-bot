@@ -1,4 +1,4 @@
-import { Link } from '@features/links/entities/link.entity';
+import { Link } from '../../features/links/entities/link.entity';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModuleAsyncOptions } from '@nestjs/typeorm';
 

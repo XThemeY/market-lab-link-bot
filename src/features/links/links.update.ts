@@ -1,9 +1,9 @@
 import { Ctx, Start, Update, Hears, On, Message } from 'nestjs-telegraf';
-import { BotContext, UrlDataType } from '@libs/interfaces';
-import { endPoints } from '@core/configs/endPoints.config';
-import { MainKeyboard } from '@core/keyboards/links.buttons';
-import { ModeService } from '@services/mode.service';
-import { ValidateUrl } from '@core/decorators/isValidUrl.decorator';
+import { BotContext, UrlDataType } from '../../libs/interfaces';
+import { endPoints } from '../../core/configs/endPoints.config';
+import { MainKeyboard } from '../../core/keyboards/links.buttons';
+import { ModeService } from '../../services/mode.service';
+import { ValidateUrl } from '../../core/decorators/isValidUrl.decorator';
 
 @Update()
 export class LinksUpdate {

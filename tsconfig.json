@@ -16,14 +16,7 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "paths": {
-      "@*": ["src/*"],
-      "@core/*": ["src/core/*"],
-      "@features/*": ["src/features/*"],
-      "@libs/*": ["src/libs/*"],
-      "@services/*": ["src/services/*"]
-    }
+    "noFallthroughCasesInSwitch": false
   },
   "exclude": ["node_modules", "dist"]
 }

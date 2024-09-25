@@ -4,7 +4,7 @@ import { LinksUpdate } from './links.update';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Link } from './entities/link.entity';
 import { MainKeyboard } from '../../core/keyboards/links.buttons';
-import { ModeService } from '@services/mode.service';
+import { ModeService } from '../../services/mode.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Link])],

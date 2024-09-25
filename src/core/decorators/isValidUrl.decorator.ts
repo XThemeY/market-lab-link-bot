@@ -1,4 +1,4 @@
-import { isValidUrl } from '@core/helpers/isValidUrl.helper';
+import { isValidUrl } from '../../core/helpers/isValidUrl.helper';
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 import { Context } from 'telegraf';
 import { Message } from 'telegraf/typings/core/types/typegram';

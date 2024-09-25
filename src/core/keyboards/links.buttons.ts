@@ -1,7 +1,7 @@
 import { Markup } from 'telegraf';
-import { endPoints } from '@core/configs/endPoints.config';
+import { endPoints } from '../../core/configs/endPoints.config';
 import { Injectable } from '@nestjs/common';
-import { IKeyboard } from '@libs/interfaces';
+import { IKeyboard } from '../../libs/interfaces';
 
 @Injectable()
 export class MainKeyboard implements IKeyboard {
