@@ -4,18 +4,25 @@ import { endPoints } from '../../core/configs/endPoints.config';
 import { MainKeyboard } from '../../core/keyboards/links.buttons';
 import { ModeService } from '../../services/mode.service';
 import { ValidateUrl } from '../../core/decorators/isValidUrl.decorator';
+import { ConfigService } from '@nestjs/config';
 
 @Update()
 export class LinksUpdate {
   constructor(
     private readonly mainKeyboard: MainKeyboard,
-    private readonly modeService: ModeService
+    private readonly modeService: ModeService,
+    private readonly configService: ConfigService
   ) {}
 
   @Start()
   async onStart(@Ctx() ctx: BotContext) {
-    await this.modeService.setSaveMode(ctx);
-    this.mainKeyboard.getButtons();
+    ctx.session.type = 'saveLink';
+    await ctx.reply(
+      `Привет! Я бот для сохранения ссылок. Пожалуйста, введите ссылку и описание (описание не больше ${this.configService.get(
+        'DESC_MAX_LENGTH'
+      )} символов)!`,
+      this.mainKeyboard.getButtons()
+    );
   }
 
   @Hears(endPoints.saveLink)

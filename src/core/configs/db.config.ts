@@ -11,7 +11,6 @@ export default (): TypeOrmModuleAsyncOptions => {
       username: configService.get('POSTGRES_USER'),
       password: configService.get('POSTGRES_PASS'),
       database: configService.get('POSTGRES_DB_NAME'),
-      ssl: true,
       entities: [Link],
       synchronize: true
     }),
