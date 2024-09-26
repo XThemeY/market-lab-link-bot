@@ -22,6 +22,10 @@ class EnvConfig {
   @IsNotEmpty({ message: 'POSTGRES_HOST is required' })
   POSTGRES_HOST: string;
 
+  @IsString()
+  @IsNotEmpty({ message: 'POSTGRES_URL is required' })
+  POSTGRES_URL: string;
+
   @Transform(({ value }) => +value || 5432, { toClassOnly: true })
   @IsNumber()
   @IsNotEmpty({ message: 'POSTGRES_PORT is required' })

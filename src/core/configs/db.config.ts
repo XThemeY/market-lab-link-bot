@@ -5,6 +5,7 @@ import { TypeOrmModuleAsyncOptions } from '@nestjs/typeorm';
 export default (): TypeOrmModuleAsyncOptions => {
   return {
     useFactory: (configService: ConfigService) => ({
+      url: configService.get('DATABASE_URL'),
       type: 'postgres',
       host: configService.get('POSTGRES_HOST'),
       port: configService.get<number>('POSTGRES_PORT'),
